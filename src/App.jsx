@@ -8,28 +8,24 @@ import MailboxList from "./components/MailboxList/MailboxList";
 import MailboxDetails from "./components/MailboxDetails/MailboxDetails";
 
 const App = () => {
-  const {mailboxes, setMailboxes} = useState([]) 
+  const [mailboxes, setMailboxes] = useState([]) 
   
-  const addBox = (newMailbox) =>{
+  const addBox = (boxData) =>{
+    const newMailbox = {_id: mailboxes.length + 1, ...boxData}
     const newMailboxes = [...mailboxes , newMailbox]
     setMailboxes(newMailboxes)
+
   }
   return (
-    <>
-  {/* <h1>Hello world!</h1> */}
-  <NavBar />
-  <Router>
+  <Router>  
+    <NavBar />
     <Routes>
       <Route path='/' element={<main><h1>Post Office</h1></main>} />
-      <Route path='/mailboxes' element={<MailboxList />} />
-      <Route path='/new-mailbox' element={<MailboxForm />} />
-      <Route path='/mailboxes/:mailboxId' element={<MailboxDetails />} />
-
+      <Route path='/mailboxes' element={<MailboxList mailboxes={mailboxes}/>} />
+      <Route path='/new-mailbox' element={<MailboxForm addBox={addBox} />} />
+      <Route path='/mailboxes/:mailboxId' element={<MailboxDetails mailboxes={mailboxes}/>} />
     </Routes>
-  
-  
   </Router>
-</>
 )
 };
 

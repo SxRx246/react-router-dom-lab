@@ -1,9 +1,10 @@
 import { Link } from "react-router"
-const NavBar = () =>{
+import "../../index.css"
+const NavBar = () => (
     <>
-    <Link to='/'>Home</Link>
-    <Link to='/mailboxes'>Mailboxes</Link>
-    <Link to='/new-mailbox'>New Mailbox</Link>
+            <Link className="link" to='/'>Home</Link>
+            <Link className="link" to='/mailboxes'>Mailboxes</Link>
+            <Link className="link" to='/new-mailbox'>New Mailbox</Link>
     </>
-}
+)
 export default NavBar
