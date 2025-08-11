@@ -57,7 +57,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #edeef0;
     background-color: #ffffff;
   }
   a:hover {
@@ -74,6 +74,7 @@ body {
   padding: 16px;
   display: flex;
   flex-direction: column;
+  background-color: #2f2e2e;
 }
 
 #root {
@@ -105,6 +106,7 @@ label,
 button {
   margin: 16px 0px;
   font-weight: bold;
+  color: #e1e1ea;
 }
 
 input,
@@ -119,4 +121,17 @@ button {
 
 .link {
   margin: 15px;
+}
+
+.mailboxesList {
+    display: flex;                 
+    justify-content: center;       
+    align-items: center;          
+    width: 150px;                  
+    height: 100px;                 
+    border: 1px solid white;       
+}
+
+form{
+  margin: 20px;
 }

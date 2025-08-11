@@ -19,7 +19,7 @@ const MailboxList = ({ mailboxes }) => {
 
         {mailboxes.map((mailbox) => (
             <Link key={mailbox._id} to={`/mailboxes/${mailbox._id}`}>
-                <h2>Mailbox {mailbox._id}</h2>
+                <h2 className="mailboxesList">Mailbox {mailbox._id}</h2>
             </Link>
         ))}
     </>
